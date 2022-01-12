@@ -74,33 +74,30 @@ map.on('click', onMapClick);
 
 function register(){
     firebase.database().ref("/ubicaciones").set({
-      nombre: getId("nombre"),
-      altitud: getId("altitud"),
-      longitud: getId("longitud"),
+      nombre: document.getElementById("nombre"),
+      altitud: document.getElementById("altitud"),
+      longitud: document.getElementById("longitud"),
 
       
     }
     
     );
-    console.log( "nombre" + getId("nombre"),
-    "altitud"+ getId("altitud"),
-    "longitud"+ getId("longitud"))
+    console.log( "nombre" + document.getElementById("nombre"),
+    "altitud"+ document.getElementById("altitud"),
+    "longitud"+ document.getElementById("longitud"))
     alert("ok registrado")
 }
 
 
-function getId(id){
-    return document.getElementById(id).value;
-    
-}
+
   
 document.getElementById("form").addEventListener("submit",(e)=>{
  
         console.log("firebase cargado ")
         e.preventDefault();
-        var nombre=getId("nombre");
-        var altitud=getId("altitud");
-        var longitud = getId("longitud");
+        var nombre=document.getElementById("nombre");
+        var altitud=document.getElementById("altitud");
+        var longitud = document.getElementById("longitud");
         register()
     
       
