@@ -55,13 +55,16 @@ var polygon = L.polygon([
     [51.503, -0.06],
     [51.51, -0.047]
 ]).addTo(map);
+
+map.on('click', onMapClick);
+map.on('click', onMapClick);
 }
 });
 function onMapClick(e) {
     alert("Estas dando click en la cordenada " + e.latlng  );
 }
 
-map.on('click', onMapClick);
+
 
 var popup = L.popup();
 
@@ -73,6 +76,6 @@ function onMapClick(e) {
         .openOn(map);
 }
 
-map.on('click', onMapClick);
+
 
 
