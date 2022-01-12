@@ -55,7 +55,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(map);
 var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
 
-var array =JSON.parse(localStorage.getItem("datos"))
+var array =JSON.parse(localStorage.getItem("ubicaciones"))
         array.forEach(element => {
             var i =0;
             i++;
