@@ -65,8 +65,9 @@ carrito.push(itemdb);
 localStorage.setItem("ubicaciones", JSON.stringify(carrito));
 */
 });
-
 var map = L.map('map').setView([20.648206, -103.353882], 13);
+
+function init(){
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -88,7 +89,7 @@ marker.bindPopup(`<b>${element.nombre}</b><br><button>Editar</button>`).openPopu
             
         });
 
-
+    }
 
 var circle = L.circle([51.508, -0.11], {
     color: 'red',
