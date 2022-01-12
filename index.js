@@ -21,7 +21,6 @@ function render(){
 function actualizarcarrito() {
     var carrito = [];
 
-    let persona = JSON.parse(localStorage.getItem("datos"));
     var starCountRef = firebase.database().ref("ubicaciones/");
 
     starCountRef.once('value', (snapshot) => {
@@ -39,8 +38,7 @@ function actualizarcarrito() {
         
     }
        
-
-        
+   
         
     });
 
@@ -56,7 +54,15 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
 }).addTo(map);
 var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
- 
+
+var array =JSON.parse(localStorage.getItem("datos"))
+        array.forEach(element => {
+            var i =0;
+            i++;
+            
+var marker = L.marker([array[i].altitud,array[i].longitud ]).addTo(map);
+            
+        });
 
 
 var counter = 0;
