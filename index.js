@@ -141,8 +141,8 @@ function register(){
 function Añadir(v,lot){
     console.log(v+lot)
     // document.getElementById("nombre").value("")
-     document.getElementById("latitud").val(v),
-     document.getElementById("longitud").val(lot)
+     document.getElementById("latitud").val(v.toString()),
+     document.getElementById("longitud").val(lot.toString())
 
 }
   
