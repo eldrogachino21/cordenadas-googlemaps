@@ -30,9 +30,9 @@ starCountRef.once('value', (snapshot) => {
 
     const value = snapshot.val();
     console.log(value);
-    var htmls = [];
+   
     for (var i = 0; i > 10; i++) {
-
+console.log(value.latitud)
         
         L.marker([value.latitud, value.longitud]).addTo(map);
         console.log(marker)
