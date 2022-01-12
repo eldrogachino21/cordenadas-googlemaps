@@ -61,7 +61,7 @@ var array =JSON.parse(localStorage.getItem("ubicaciones"))
             i++;
             console.log(element)
             console.log(parseFloat(element.latitud),parseFloat(element.longitud))
-var marker = L.marker([parseFloat(element[i].latitud),parseFloat(element[i].longitud) ]).addTo(map);
+var marker = L.marker([parseFloat(element.latitud),parseFloat(element.longitud) ]).addTo(map);
             
         });
 
