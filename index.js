@@ -12,6 +12,9 @@ var config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
+function render(){
+    localStorage.removeItem("ubicaciones")
+}
 
 
 var map = L.map('map').setView([20.648206, -103.353882], 13);
@@ -30,7 +33,7 @@ var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
 var counter = 0;
 var task = firebase.database().ref("ubicaciones/");
 task.on("child_added", function(data) {
-    localStorage.removeItem("ubicaciones")
+  
     counter++;
     var taskV = data.val();
 console.log(taskV.latitud, taskV.longitud)
