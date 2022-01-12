@@ -1,6 +1,6 @@
 var map = L.map('map').setView([51.505, -0.09], 13);
 
-L.tileLayer("https://{s}.tile.openstreetnap.org/{z})/{x}/{y}-prg",{
+L.tileLayer("https://{s}.tile.openstreetnap.org/{z})/{x}/{y}.png",{
     attribution: "&copy: ca href-'https://w.openstreetnap.org/copyright'>0penstreetlapc/a> contributors"
 }).addTo(map);
 var marker = L.marker([51.5, -0.09]).addTo(map);
