@@ -115,7 +115,7 @@ function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
 
-        .setContent("Estas dando click en la cordenada " + e.latlng .toString()+ `<button onclick='Añadir(${e.latlng.toString().replaceAll("LatLng","")})'>Añadir</button>` )
+        .setContent("Estas dando click en la cordenada " + e.latlng .toString()+ `<button onclick='Añadir(${e.latlng.toString().replaceAll("LatLng","").replaceAll("(","").replaceAll(")","")})'>Añadir</button>` )
         .openOn(map);
 }
 
