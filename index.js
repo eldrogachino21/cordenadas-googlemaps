@@ -80,7 +80,11 @@ function register(){
 
       
     }
+    
     );
+    console.log( "nombre" + getId("nombre"),
+    "altitud"+ getId("altitud"),
+    "longitud"+ getId("longitud"))
     alert("ok registrado")
 }
 
