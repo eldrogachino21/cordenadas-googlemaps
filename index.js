@@ -138,10 +138,10 @@ function register(){
 }
 
 
-function Añadir(value,lot){
-    console.log(value)
+function Añadir(v,lot){
+    console.log(v)
     // document.getElementById("nombre").value("")
-     document.getElementById("latitud").value(value)
+     document.getElementById("latitud").value(v)
      document.getElementById("longitud").value(lot),
 
 }
