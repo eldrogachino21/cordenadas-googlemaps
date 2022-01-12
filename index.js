@@ -17,7 +17,10 @@ function render(){
    actualizarcarrito()
    
 }
+function reload(){
+javascript:location.reload()
 
+}
 
 function actualizarcarrito() {
     var carrito = [];
@@ -64,7 +67,6 @@ console.log(taskV.latitud, taskV.longitud)
 carrito.push(itemdb);
 localStorage.setItem("ubicaciones", JSON.stringify(carrito));
 */
-javascript:location.reload()
 
 });
 
