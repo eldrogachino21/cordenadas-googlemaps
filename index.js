@@ -25,24 +25,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(map);
 var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
  
-var starCountRef = firebase.database().ref('ubicaciones/');
-starCountRef.once('value', (snapshot) => {
 
-    const value = snapshot.val();
-   
-    for (var i = 0; i > 10; i++) {
-        console.log(value.latitud)
-        
-        L.marker([value.latitud, value.longitud]).addTo(map);
-        console.log(marker)
-    }
-});
 
 var counter = 0;
 var task = firebase.database().ref("ubicaciones/");
 task.on("child_added", function(data) {
     var taskV = data.val();
-
+console.log(value.latitud, value.longitud)
+    L.marker([value.latitud, value.longitud]).addTo(map);
     
     
 });
