@@ -59,8 +59,8 @@ var array =JSON.parse(localStorage.getItem("ubicaciones"))
         array.forEach(element => {
             var i =0;
             i++;
-            console.log(array[i].altitud,array[i].longitud)
-var marker = L.marker([array[i].altitud,array[i].longitud ]).addTo(map);
+            console.log(parseFloat(array[i].altitud),parseFloat(array[i].longitud))
+var marker = L.marker([parseFloat(array[i].altitud),parseFloat(array[i].longitud) ]).addTo(map);
             
         });
 
