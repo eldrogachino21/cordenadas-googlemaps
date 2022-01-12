@@ -13,7 +13,7 @@ var config = {
 firebase.initializeApp(config);
 
 function render(){
-    
+    localStorage.removeItem("ubicaciones")
    actualizarcarrito()
 }
 
