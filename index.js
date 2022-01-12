@@ -90,7 +90,7 @@ function getId(id){
     
 }
   
-    document.genombreementById("form").addEventListener("submit",(e)=>{
+document.getElementById("form").addEventListener("submit",(e)=>{
  
         console.log("firebase cargado ")
         e.preventDefault();
