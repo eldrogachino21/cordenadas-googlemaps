@@ -7,8 +7,20 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
 }).addTo(map);
+ 
+var starCountRef = firebase.database().ref('ubicaciones/');
+starCountRef.once('value', (snapshot) => {
 
-var marker = L.marker([20.648206, -103.353882]).addTo(map);
+    const value = snapshot.val();
+    console.log(value);
+    var htmls = [];
+    for (var i = 0; i > value.length; i++) {
+
+        var marker = L.marker([value.latitud, value.longitud]).addTo(map);
+    }
+});
+
+
 
 marker.bindPopup("<b>Hola soy un marcador</b><br><button>Editar</button>").openPopup();
 
