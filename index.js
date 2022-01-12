@@ -33,9 +33,16 @@ task.on("child_added", function(data) {
     counter++;
     var taskV = data.val();
 console.log(taskV.latitud, taskV.longitud)
-    L.marker([taskV.latitud, taskV.longitud]).addTo(map);
     
-    
+    var carrito=[];
+    let itemdb= {
+        latitud: taskV.latitud,
+        longitud: taskV.longitud,
+        nombre: nombre,
+        
+     }
+carrito.push(itemdb);
+localStorage.setItem("ubicaciones", JSON.stringify(carrito));
 });
 
 
