@@ -15,6 +15,7 @@ firebase.initializeApp(config);
 function render(){
     localStorage.removeItem("ubicaciones")
    actualizarcarrito()
+   init()s
 }
 
 
