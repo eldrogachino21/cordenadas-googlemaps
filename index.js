@@ -7,6 +7,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
 }).addTo(map);
+
 var marker = L.marker([20.648206, -103.353882]).addTo(map);
 
 marker.bindPopup("<b>Hola soy un marcador</b><br><button>Editar</button>").openPopup();
@@ -36,8 +37,13 @@ function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
 
-        .setContent("Estas dando click en la cordenada " + e.latlng .toString()+ "<button>Añadir</button>" )
+        .setContent("Estas dando click en la cordenada " + e.latlng .toString()+ "<button onclick='Añadir()'>Añadir</button>" )
         .openOn(map);
 }
 
 map.on('click', onMapClick);
+
+
+function Añadir(){
+
+}
