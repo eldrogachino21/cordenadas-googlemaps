@@ -90,7 +90,12 @@ function register(){
 }
 
 
+function Añadir(){
+    nombre: document.getElementById("nombre").value(""),
+    altitud: document.getElementById("altitud").value(""),
+    longitud: document.getElementById("longitud").value(""),
 
+}
   
 document.getElementById("form").addEventListener("submit",(e)=>{
  
