@@ -44,27 +44,6 @@ function actualizarcarrito() {
 
 }
 
-var map = L.map('map').setView([20.648206, -103.353882], 13);
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
-}).addTo(map);
-
-
-var array =JSON.parse(localStorage.getItem("ubicaciones"))
-        array.forEach(element => {
-            var i =0;
-            i++;
-            console.log(element)
-            console.log(parseFloat(element.latitud),parseFloat(element.longitud))
- var marker = L.marker([parseFloat(element.longitud),parseFloat(element.latitud) ]).addTo(map);
-marker.bindPopup("<b>Hola soy un marcador</b><br><button>Editar</button>").openPopup();
-            
-        });
 
 
 var counter = 0;
@@ -87,9 +66,30 @@ localStorage.setItem("ubicaciones", JSON.stringify(carrito));
 */
 });
 
+var map = L.map('map').setView([20.648206, -103.353882], 13);
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
+}).addTo(map);
 
+var marker = L.marker(0,0) ]).addTo(map);
 
+var array =JSON.parse(localStorage.getItem("ubicaciones"))
+        array.forEach(element => {
+            var i =0;
+            i++;
+            console.log(element)
+            console.log(parseFloat(element.latitud),parseFloat(element.longitud))
+ var marker = L.marker([parseFloat(element.longitud),parseFloat(element.latitud) ]).addTo(map);
 marker.bindPopup("<b>Hola soy un marcador</b><br><button>Editar</button>").openPopup();
+            
+        });
+
+
 
 var circle = L.circle([51.508, -0.11], {
     color: 'red',
