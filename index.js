@@ -86,7 +86,7 @@ function register(){
 
 
 function getId(id){
-    return document.getElementById(id).taskV;
+    return document.getElementById(id);
     
 }
   
