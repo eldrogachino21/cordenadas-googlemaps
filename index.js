@@ -88,7 +88,8 @@ function register(){
 function getId(id){
     return document.getElementById(id).taskV;
     
-  }
+}
+  
     document.genombreementById("form").addEventListener("submit",(e)=>{
  
         console.log("firebase cargado ")
@@ -101,7 +102,7 @@ function getId(id){
       
         
       
-      });
+     
         
       
       
