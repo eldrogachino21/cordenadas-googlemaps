@@ -42,7 +42,6 @@ function actualizarcarrito() {
    
         
     });
-    javascript:location.reload()
 }
 
 
@@ -65,6 +64,8 @@ console.log(taskV.latitud, taskV.longitud)
 carrito.push(itemdb);
 localStorage.setItem("ubicaciones", JSON.stringify(carrito));
 */
+javascript:location.reload()
+
 });
 
 var map = L.map('map').setView([20.648206, -103.353882], 13);
