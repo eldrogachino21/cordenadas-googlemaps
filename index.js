@@ -141,7 +141,7 @@ function register(){
 function Añadir(value){
     console.log(value)
     // document.getElementById("nombre").value("")
-    // document.getElementById("latitud").value("")
+     document.getElementById("latitud").value(value)
     // document.getElementById("longitud").value(""),
 
 }
