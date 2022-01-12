@@ -9,7 +9,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(map);
 var marker = L.marker([20.648206, -103.353882]).addTo(map);
 
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+marker.bindPopup("<b>Hola soy un marcador</b><br><button>Editar</button>").openPopup();
 
 var circle = L.circle([51.508, -0.11], {
     color: 'red',
