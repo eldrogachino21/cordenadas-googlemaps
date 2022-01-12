@@ -76,7 +76,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
 }).addTo(map);
 
-var marker = L.marker(0,0).addTo(map);
 
 var array =JSON.parse(localStorage.getItem("ubicaciones"))
         array.forEach(element => {
