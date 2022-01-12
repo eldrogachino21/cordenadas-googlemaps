@@ -62,6 +62,7 @@ var array =JSON.parse(localStorage.getItem("ubicaciones"))
             console.log(element)
             console.log(parseFloat(element.latitud),parseFloat(element.longitud))
  marker = L.marker([parseFloat(element.longitud),parseFloat(element.latitud) ]).addTo(map);
+marker.bindPopup("<b>Hola soy un marcador</b><br><button>Editar</button>").openPopup();
             
         });
 
