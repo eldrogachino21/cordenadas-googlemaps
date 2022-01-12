@@ -92,9 +92,9 @@ function register(){
 
 function Añadir(value){
     console.log(value)
-     document.getElementById("nombre").value(""),
-     document.getElementById("altitud").value(""),
-     document.getElementById("longitud").value(""),
+    // document.getElementById("nombre").value("")
+    // document.getElementById("altitud").value("")
+    // document.getElementById("longitud").value(""),
 
 }
   
