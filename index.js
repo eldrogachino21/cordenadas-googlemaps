@@ -13,9 +13,38 @@ var config = {
 firebase.initializeApp(config);
 
 function render(){
-    localStorage.removeItem("ubicaciones")
+    
+   actualizarcarrito()
 }
 
+
+function actualizarcarrito() {
+    var carrito = [];
+
+    let persona = JSON.parse(localStorage.getItem("datos"));
+    var starCountRef = firebase.database().ref("ubicaciones/");
+
+    starCountRef.once('value', (snapshot) => {
+        
+        snapshot.forEach(element => {
+            carrito.push(element.val());
+        });
+       console.log(carrito);
+       localStorage.setItem("ubicaciones", JSON.stringify(carrito));
+        
+       if (localStorage.getItem("ubicaciones") == null) {
+
+    } else {
+        products = JSON.parse(localStorage.getItem("ubicaciones"));
+        
+    }
+       
+
+        
+        
+    });
+
+}
 
 var map = L.map('map').setView([20.648206, -103.353882], 13);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -37,7 +66,7 @@ task.on("child_added", function(data) {
     counter++;
     var taskV = data.val();
 console.log(taskV.latitud, taskV.longitud)
-    
+   /* 
     var carrito=[];
     let itemdb= {
         latitud: taskV.latitud,
@@ -47,6 +76,7 @@ console.log(taskV.latitud, taskV.longitud)
      }
 carrito.push(itemdb);
 localStorage.setItem("ubicaciones", JSON.stringify(carrito));
+*/
 });
 
 
