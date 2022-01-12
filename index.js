@@ -14,7 +14,16 @@ firebase.initializeApp(config);
 
 
 
-
+var map = L.map('map').setView([20.648206, -103.353882], 13);
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
+}).addTo(map);
+var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
  
 var starCountRef = firebase.database().ref('ubicaciones/');
 starCountRef.once('value', (snapshot) => {
@@ -24,20 +33,11 @@ starCountRef.once('value', (snapshot) => {
    
     for (var i = 0; i > 10; i++) {
 console.log(value.latitud)
-        var map = L.map('map').setView([20.648206, -103.353882], 13);
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
-        }).addTo(map);
-        var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
-
+        
         L.marker([value.latitud, value.longitud]).addTo(map);
         console.log(marker)
-   
+    }
+});
 
 
 
@@ -56,15 +56,11 @@ var polygon = L.polygon([
     [51.51, -0.047]
 ]).addTo(map);
 
-map.on('click', onMapClick);
-map.on('click', onMapClick);
-}
-});
 function onMapClick(e) {
     alert("Estas dando click en la cordenada " + e.latlng  );
 }
 
-
+map.on('click', onMapClick);
 
 var popup = L.popup();
 
@@ -76,6 +72,9 @@ function onMapClick(e) {
         .openOn(map);
 }
 
+map.on('click', onMapClick);
 
 
+function Añadir(){
 
+}
