@@ -1,13 +1,11 @@
-function initMap() {
-    const myLatLng = { lat: -25.363, lng: 131.044 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: myLatLng,
+function iniciarMap(){
+    var coord = {lat:-34.5956145 ,lng: -58.4431949};
+    var map = new google.maps.Map(document.getElementById('map'),{
+      zoom: 10,
+      center: coord
     });
-  
-    new google.maps.Marker({
-      position: myLatLng,
-      map,
-      title: "Hello World!",
-    });
-  }
+    var marker = new google.maps.Marker({
+      position: coord,
+      map: map
+    }); 
+}
