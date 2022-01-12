@@ -83,7 +83,7 @@ map.on('click', onMapClick);
 function register(){
     firebase.database().ref("/ubicaciones").child(counter+1).set({
       nombre: document.getElementById("nombre").value,
-      altitud: document.getElementById("altitud").value,
+      latitud: document.getElementById("latitud").value,
       longitud: document.getElementById("longitud").value,
 
       
@@ -91,7 +91,7 @@ function register(){
     
     );
     console.log( "nombre" + document.getElementById("nombre"),
-    "altitud"+ document.getElementById("altitud").value,
+    "latitud"+ document.getElementById("latitud").value,
     "longitud"+ document.getElementById("longitud").value)
     alert("ok registrado")
 }
@@ -100,7 +100,7 @@ function register(){
 function Añadir(value){
     console.log(value)
     // document.getElementById("nombre").value("")
-    // document.getElementById("altitud").value("")
+    // document.getElementById("latitud").value("")
     // document.getElementById("longitud").value(""),
 
 }
@@ -110,7 +110,7 @@ document.getElementById("form").addEventListener("submit",(e)=>{
         console.log("firebase cargado ")
         e.preventDefault();
         var nombre=document.getElementById("nombre").value;
-        var altitud=document.getElementById("altitud").value;
+        var latitud=document.getElementById("latitud").value;
         var longitud = document.getElementById("longitud").value;
         register()
     
