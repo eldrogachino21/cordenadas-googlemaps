@@ -33,7 +33,7 @@ starCountRef.once('value', (snapshot) => {
     var htmls = [];
     for (var i = 0; i > value.length; i++) {
 
-        marker = L.marker([value.latitud, value.longitud]).addTo(map);
+         marker = L.marker([value.latitud, value.longitud]).addTo(map);
         console.log(marker)
     }
 });
