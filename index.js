@@ -1,3 +1,18 @@
+var config = {
+    apiKey: "AIzaSyA32KZubjgB-BBbpoqP_wwnhsRZS5V9EGs",
+          authDomain: "mapmarker-703b8.firebaseapp.com",
+          projectId: "mapmarker-703b8",
+          storageBucket: "mapmarker-703b8.appspot.com",
+          messagingSenderId: "88747209468",
+          appId: "1:88747209468:web:c63c454ab462c40e595d79",
+          measurementId: "G-1GBT7VTQBV"
+        // PUT YOUR CREDENTIALS HERE
+};
+// Initialize Firebase
+firebase.initializeApp(config);
+
+
+
 var map = L.map('map').setView([20.648206, -103.353882], 13);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
