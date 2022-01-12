@@ -59,7 +59,7 @@ var array =JSON.parse(localStorage.getItem("datos"))
         array.forEach(element => {
             var i =0;
             i++;
-            
+            console.log(array[i].altitud,array[i].longitud)
 var marker = L.marker([array[i].altitud,array[i].longitud ]).addTo(map);
             
         });
