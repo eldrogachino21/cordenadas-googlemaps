@@ -31,8 +31,8 @@ var counter = 0;
 var task = firebase.database().ref("ubicaciones/");
 task.on("child_added", function(data) {
     var taskV = data.val();
-console.log(value.latitud, value.longitud)
-    L.marker([value.latitud, value.longitud]).addTo(map);
+console.log(taskV.latitud, taskV.longitud)
+    L.marker([taskV.latitud, taskV.longitud]).addTo(map);
     
     
 });
@@ -86,7 +86,7 @@ function register(){
 
 
 function getId(id){
-    return document.getElementById(id).value;
+    return document.getElementById(id).taskV;
     
   }
     document.genombreementById("form").addEventListener("submit",(e)=>{
