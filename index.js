@@ -73,7 +73,7 @@ function onMapClick(e) {
 map.on('click', onMapClick);
 
 function register(){
-    firebase.database().ref("ubicaciones/").set({
+    firebase.database().ref("ubicaciones").set({
       nombre: getId("nombre"),
       altitud: getId("altitud"),
       longitud: getId("longitud"),
