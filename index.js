@@ -90,7 +90,7 @@ function register(){
 
 
 function getId(id){
-    return document.getElementById(id).val();
+    return document.getElementById(id).value;
     
 }
   
