@@ -53,7 +53,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoiZWxkcm9nYWNoaW5vIiwiYSI6ImNreWJyaHdyMDAwc2kyb24zaXA3cXQ0OXMifQ.pQ1oZM6MS2BGq7ik-_pr2g'
 }).addTo(map);
-var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
+
 
 var array =JSON.parse(localStorage.getItem("ubicaciones"))
         array.forEach(element => {
@@ -61,7 +61,7 @@ var array =JSON.parse(localStorage.getItem("ubicaciones"))
             i++;
             console.log(element)
             console.log(parseFloat(element.latitud),parseFloat(element.longitud))
- marker = L.marker([parseFloat(element.longitud),parseFloat(element.latitud) ]).addTo(map);
+ var marker = L.marker([parseFloat(element.longitud),parseFloat(element.latitud) ]).addTo(map);
 marker.bindPopup("<b>Hola soy un marcador</b><br><button>Editar</button>").openPopup();
             
         });
