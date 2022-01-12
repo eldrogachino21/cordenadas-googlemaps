@@ -25,7 +25,7 @@ var polygon = L.polygon([
 ]).addTo(map);
 
 function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
+    alert("Estas dando click en la cordenada " + e.latlng  );
 }
 
 map.on('click', onMapClick);
@@ -35,7 +35,8 @@ var popup = L.popup();
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
+
+        .setContent("Estas dando click en la cordenada " + e.latlng .toString()+ "<button>añadir</button>" )
         .openOn(map);
 }
 
