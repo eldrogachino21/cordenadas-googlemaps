@@ -2,6 +2,7 @@ var config = {
     apiKey: "AIzaSyA32KZubjgB-BBbpoqP_wwnhsRZS5V9EGs",
           authDomain: "mapmarker-703b8.firebaseapp.com",
           projectId: "mapmarker-703b8",
+          databaseURL:"https://mapmarker-703b8-default-rtdb.firebaseio.com/",
           storageBucket: "mapmarker-703b8.appspot.com",
           messagingSenderId: "88747209468",
           appId: "1:88747209468:web:c63c454ab462c40e595d79",
