@@ -30,6 +30,7 @@ var marker = L.marker([20.648206,-103.353882 ]).addTo(map);
 var counter = 0;
 var task = firebase.database().ref("ubicaciones/");
 task.on("child_added", function(data) {
+    counter++;
     var taskV = data.val();
 console.log(taskV.latitud, taskV.longitud)
     L.marker([taskV.latitud, taskV.longitud]).addTo(map);
@@ -73,7 +74,7 @@ function onMapClick(e) {
 map.on('click', onMapClick);
 
 function register(){
-    firebase.database().ref("/ubicaciones").child().set({
+    firebase.database().ref("/ubicaciones").child(counter+1).set({
       nombre: document.getElementById("nombre").value,
       altitud: document.getElementById("altitud").value,
       longitud: document.getElementById("longitud").value,
