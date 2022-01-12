@@ -72,44 +72,32 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
+function register(){
+    firebase.database().ref("ubicaciones/").set({
+      nombre: getId("nombre"),
+      altitud: getId("altitud"),
+      longitud: getId("longitud"),
+
+      
+    }
+    );
+    alert("ok registrado")
+}
 
 
-    document.getElementById("form").addEventListener("submit",(e)=>{
+function getId(id){
+    return document.getElementById(id).value;
+    
+  }
+    document.genombreementById("form").addEventListener("submit",(e)=>{
  
         console.log("firebase cargado ")
         e.preventDefault();
-        var tel=getId("telefono");
-        var pass=getId("contraseña");
-        var conpass = getId("confirmarcontraseña");
-        
-        var starCountRef = firebase.database().ref('Usuarios/'+tel);
-      starCountRef.once('value', (snapshot) => {
-      
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-          const id = snapshot.val().telefono;
-          if(id==tel){
-            alert("no se ha podido registrar el numero que ingresaste ya existe");
-          
-          }else{
-            
-            if(pass==conpass){
-              register();
-              location.replace('login.html');
-            }else{
-              alert("las contraseñas no concuerdan")
-            }
-            
-          }
-         
-        } else {
-          if(pass==conpass){
-            register();
-            location.replace('login.html');
-          }else{
-            alert("las contraseñas no concuerdan")
-          }
-        }
+        var nombre=getId("nombre");
+        var altitud=getId("altitud");
+        var longitud = getId("longitud");
+        register()
+    
       
         
       
