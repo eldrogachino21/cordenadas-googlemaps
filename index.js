@@ -38,7 +38,7 @@ console.log(taskV.latitud, taskV.longitud)
     let itemdb= {
         latitud: taskV.latitud,
         longitud: taskV.longitud,
-        nombre: nombre,
+        nombre: taskV.nombre,
         
      }
 carrito.push(itemdb);
@@ -90,7 +90,7 @@ function register(){
     }
     
     );
-    console.log( "nombre" + document.getElementById("nombre"),
+    console.log( "nombre" + document.getElementById("nombre").value,
     "latitud"+ document.getElementById("latitud").value,
     "longitud"+ document.getElementById("longitud").value)
     alert("ok registrado")
