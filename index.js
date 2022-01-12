@@ -67,7 +67,7 @@ function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
 
-        .setContent("Estas dando click en la cordenada " + e.latlng .toString()+ "<button onclick='Añadir()'>Añadir</button>" )
+        .setContent("Estas dando click en la cordenada " + e.latlng .toString()+ "<button onclick='Añadir(e.latlng)'>Añadir</button>" )
         .openOn(map);
 }
 
@@ -90,10 +90,11 @@ function register(){
 }
 
 
-function Añadir(){
-    nombre: document.getElementById("nombre").value(""),
-    altitud: document.getElementById("altitud").value(""),
-    longitud: document.getElementById("longitud").value(""),
+function Añadir(value){
+    console.log(value)
+     document.getElementById("nombre").value(""),
+     document.getElementById("altitud").value(""),
+     document.getElementById("longitud").value(""),
 
 }
   
